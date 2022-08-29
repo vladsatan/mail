@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import Search from '../Search/Search'
 import './MainContainer.css'
 
