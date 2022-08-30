@@ -1,0 +1,26 @@
+.email-let {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    background-color: rgba(128, 128, 128, 0.271);
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: default;
+}
+
+.box {
+    display: flex;
+}
+
+.box p {
+    padding-left: 10px;
+}
+
+.box img {
+    cursor: pointer;
+}
+
+

@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import MainContainer from './components/MainContainer/MainContainer';
 
 
@@ -9,6 +9,7 @@ import MainContainer from './components/MainContainer/MainContainer';
 function App() {
 
   const [isLogin, setIsLogin] = useState(false)
+  const [sectionSelection, setSectionSelection] = useState('incoming')
 
   return (
     <div className="App">
@@ -17,8 +18,8 @@ function App() {
 
 
       <div className='container'>
-      <Menu />
-      <MainContainer />
+      <Menu setSectionSelection={setSectionSelection} />
+      <MainContainer sectionSelection={sectionSelection} />
       </div>
     
     
