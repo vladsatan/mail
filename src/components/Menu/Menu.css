@@ -35,9 +35,25 @@
     transition: 0.2s;
     font-size: 18px;
     cursor: pointer;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
 
 .menuPoint:hover {
     color: red;
     border-right: 5px solid red;
+}
+
+.numberOfLetters {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

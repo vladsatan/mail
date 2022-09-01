@@ -7,29 +7,26 @@ import './MainContainer.css'
 
 export default function MainContainer(props){
 
-    const {sectionSelection} = props
+    const {sectionSelection, setIncomingLength, setReadLength} = props
 
     const [letters, setLetters] = useState([])
-    const [readArray, setReadArray] = useState([])
-    const [incomingArray, setIncomingArray] = useState([])
+    const array = letters.filter(e=>{return e?.isRead === true})
+    const array2 = letters.filter(e=>{return e?.isRead === false})
 
     useEffect(()=>{fetch('../../../emailes.json').then((response) => response.json()).then((data) =>{setLetters(data)})},[])
     
     useEffect(()=>{
-        if(letters.length>1){
-            const array = letters.filter(e=>{return e.isRead === true})
-            const array2 = letters.filter(e=>{return e.isRead === false})
-            setReadArray(array)
-            setIncomingArray(array2)
-         }
+            setIncomingLength(array2.length)
+            setReadLength(array.length)
+   
     }, [letters])
-
-
+ 
+    console.log(letters);
     return(
         <div className='MainContainer'>
             <Search />
             <div className='letters'>
-              {sectionSelection === 'incoming'? <IncomingEmails letters={incomingArray}/> : <ReadEmails letters={readArray} />}
+              {sectionSelection === 'incoming'? <IncomingEmails letters={array2} lettersarray={letters} setLetters={setLetters}  /> : <ReadEmails letters={array} lettersarray={letters} setLetters={setLetters} />}
             </div>
         </div>
     )

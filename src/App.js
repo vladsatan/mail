@@ -8,8 +8,10 @@ import MainContainer from './components/MainContainer/MainContainer';
 
 function App() {
 
-  const [isLogin, setIsLogin] = useState(false)
+  const [isLogin, setIsLogin] = useState(true)
   const [sectionSelection, setSectionSelection] = useState('incoming')
+  const [incomingLength, setIncomingLength] = useState('')
+  const [readLength, setReadLength] = useState('')
 
   return (
     <div className="App">
@@ -18,8 +20,8 @@ function App() {
 
 
       <div className='container'>
-      <Menu setSectionSelection={setSectionSelection} />
-      <MainContainer sectionSelection={sectionSelection} />
+      <Menu setSectionSelection={setSectionSelection} incomingLength={incomingLength} readLength={readLength} />
+      <MainContainer sectionSelection={sectionSelection} setIncomingLength={setIncomingLength} setReadLength={setReadLength} />
       </div>
     
     
