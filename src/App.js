@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
 import React, {useState, useEffect} from 'react'
 import MainContainer from './components/MainContainer/MainContainer';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 
@@ -14,6 +15,7 @@ function App() {
   const [readLength, setReadLength] = useState('')
 
   return (
+<Router>
     <div className="App">
     <Header isLogin={isLogin} setIsLogin={setIsLogin} />
     {isLogin? (
@@ -28,6 +30,7 @@ function App() {
     ):null}
     
     </div>
+</Router>
   );
 }
 

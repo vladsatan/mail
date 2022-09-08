@@ -6,7 +6,6 @@ import ReactTooltip from 'react-tooltip';
 export default function Email(props) {
 
     const {id,content, isRead, sender, emailDate,lettersarray,setLetters} = props
-    console.log(lettersarray, 'lettersarray');
     const moveToRead=()=>{
     const newArray = lettersarray.map(e=>{
         if(e.id === id){

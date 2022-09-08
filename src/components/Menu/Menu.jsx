@@ -1,23 +1,26 @@
 import './Menu.css'
+import {NavLink} from 'react-router-dom';
 
 export default function Menu(props) {
 
-const {setSectionSelection,incomingLength,readLength} = props
+const {incomingLength,readLength} = props
 
     return(
+
         <div className='menuContainer'>
-            <button className='writeLetter'>Write a letter</button>
-            <div className='menuPoint' onClick={()=>{setSectionSelection('incoming')}}>
+            <NavLink to='/createletter' className='writeLetter'>Write a letter</NavLink>
+            <NavLink to='/' className='menuPoint'>
                 Incoming
             <div className='numberOfLetters'>{incomingLength}</div>
-                </div>
-            <div className='menuPoint' onClick={()=>{setSectionSelection('read')}}>
+                </NavLink>
+            <NavLink to='/read' className='menuPoint'>
                 Read
                 <div className='numberOfLetters'>{readLength}</div>
-                </div>
-            <div className='menuPoint'>Tagged</div>
-            <div className='menuPoint'>Drafts</div>
-            <div className='menuPoint'>Spam</div>
+                </NavLink>
+            <NavLink to='/tagged' className='menuPoint'>Tagged</NavLink>
+            <NavLink to='/drafts' className='menuPoint'>Drafts</NavLink>
+            <NavLink to='/spam' className='menuPoint'>Spam</NavLink>
+            
         </div>
     )
 }
