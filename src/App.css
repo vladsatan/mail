@@ -4,6 +4,14 @@
   text-align: center;
 }
 
+body {
+  overflow: hidden;
+}
+
+.App::-webkit-scrollbar {
+  scroll-snap-type: none;
+}
+
 * {
   padding: 0;
   margin: 0;

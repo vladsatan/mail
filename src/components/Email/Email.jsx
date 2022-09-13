@@ -2,10 +2,14 @@ import React from 'react'
 import "./Email.css"
 import mailSVG from './mailSVG.svg'
 import ReactTooltip from 'react-tooltip';
+import Delete from './Delete.svg';
+import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+polyfillCountryFlagEmojis();
 
 export default function Email(props) {
 
     const {id,content, isRead, sender, emailDate,lettersarray,setLetters} = props
+
     const moveToRead=()=>{
     const newArray = lettersarray.map(e=>{
         if(e.id === id){
@@ -15,7 +19,8 @@ export default function Email(props) {
         return e
       })
      setLetters(newArray)
-     console.log(newArray);
+     localStorage.removeItem('emails')
+     localStorage.setItem('emails', JSON.stringify(newArray))
     }
 
     
@@ -28,6 +33,15 @@ export default function Email(props) {
           return e
       })
       setLetters(newArray)
+      localStorage.removeItem('emails')
+      localStorage.setItem('emails', JSON.stringify(newArray))
+    }
+
+    const removeMail=()=>{
+      const newArray = lettersarray.filter(e => {return e.id !== id})
+      setLetters(newArray)
+      localStorage.removeItem('emails')
+      localStorage.setItem('emails', JSON.stringify(newArray))
     }
 
   return (
@@ -40,6 +54,7 @@ export default function Email(props) {
          : 
          <img data-tip="add to incoming" src={mailSVG} alt='add to incoming' width={'20px'} onClick={moveToIncoming} /> 
          }
+         <img data-tip="delete" src={Delete} alt='delete' width={'20px'} onClick={removeMail} />
          <p>{sender}</p>
          </div>
 

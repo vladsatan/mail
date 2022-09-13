@@ -9,6 +9,11 @@
     border: 1px solid white;
     border-radius: 5px;
     cursor: default;
+    transition: .3s;
+}
+
+.email-let:hover {
+    color: rgb(255, 254, 254);
 }
 
 .box {

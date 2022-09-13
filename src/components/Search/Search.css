@@ -33,11 +33,10 @@
    border-bottom-right-radius: 8px;
    transition: ease-in-out 0.2s;
    border: 2px solid red;
-   padding: 5px;
+   padding: 4px;
 }
 
 .search-button:hover {
     color: red;
     background-color: white;
-    
 }

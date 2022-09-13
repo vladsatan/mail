@@ -4,10 +4,12 @@ import Menu from './components/Menu/Menu';
 import React, {useState, useEffect} from 'react'
 import MainContainer from './components/MainContainer/MainContainer';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+polyfillCountryFlagEmojis();
 
 
 
-function App() {
+export default function App() {
 
   const [isLogin, setIsLogin] = useState(true)
   const [sectionSelection, setSectionSelection] = useState('incoming')
@@ -34,4 +36,4 @@ function App() {
   );
 }
 
-export default App;
+

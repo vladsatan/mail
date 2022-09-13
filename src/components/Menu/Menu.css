@@ -64,3 +64,21 @@
 a {
     text-decoration: none;
 }
+
+@media(max-width: 900px){
+    .writeLetter {
+        display: block;
+        width: 100px;
+        height: 50px;
+        background-color: red;
+        color: white;
+        font-size: 15px;
+        outline: none;
+        border: none;
+        border-radius: 50px;
+        margin-bottom: 20px;
+        transition: 0.3s;
+        margin: 20px auto;
+        padding-top: 17px;
+    }
+}
