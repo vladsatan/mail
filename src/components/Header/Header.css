@@ -21,6 +21,7 @@ header {
 .user {
   font-size: 25px;
   padding: 0 30px;
+  color: white;
 }
 
 .loginBtn {

@@ -18,9 +18,15 @@
    padding: 7px;
    outline: none;
    border: none;
-   background-color: rgb(228, 228, 228);
+   /* background-color: rgb(228, 228, 228); */
+   background-color: rgb(128, 128, 128);
    border-top-left-radius: 8px;
    border-bottom-left-radius: 8px;
+   color: white;
+}
+
+.search-input::placeholder{
+    color: white;
 }
 
 .search-button {

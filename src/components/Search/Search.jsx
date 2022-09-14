@@ -8,8 +8,8 @@ export default function Search(props){
     const {letters, setSearchArray} = props
 
     const getSearch = () =>{
-       const newArray = letters.filter(e=>{return e.content.includes(search)})
-       setSearchArray(newArray)
+      const newArray = letters.filter(e =>{return (e.content.toLowerCase()).includes(search.toLowerCase()) || (e.sender.toLowerCase()).includes(search.toLowerCase())})
+      setSearchArray(newArray)
     }
 
    return(
