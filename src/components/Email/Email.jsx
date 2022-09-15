@@ -4,6 +4,7 @@ import mailSVG from './mailSVG.svg'
 import ReactTooltip from 'react-tooltip';
 import Delete from './Delete.svg';
 import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+import { Link } from 'react-router-dom';
 polyfillCountryFlagEmojis();
 
 export default function Email(props) {
@@ -45,9 +46,9 @@ export default function Email(props) {
     }
 
   return (
-    <li key={id} className='email-let'>
+    <li key={id} className='email-let'><Link to={`${id}`}>
 
-
+      
          <div className='box'>
          {isRead === false? 
          <img data-tip="add to read" src={mailSVG} alt='add to read' width={'20px'} onClick={moveToRead} /> 
@@ -63,6 +64,7 @@ export default function Email(props) {
         <p>{emailDate}</p>
 
         <ReactTooltip />
+        </Link>
     </li>
     
   )

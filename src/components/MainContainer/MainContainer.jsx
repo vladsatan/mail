@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import Search from '../Search/Search'
 import './MainContainer.css'
 import {Route, Routes} from 'react-router-dom';
+import Message from '../Message/Message'
 
 const local = JSON.parse(localStorage.getItem('emails'))
 
@@ -45,6 +46,7 @@ export default function MainContainer(props){
                     <Route path="/read" element={<ReadEmails letters={array} lettersarray={letters} setLetters={setLetters} />} />
                     <Route path='/createletter' element={<CreateLetter array={letters} setLetters={setLetters} />} />
                     <Route path='/search' element={<SearchContainer searchArray={searchArray} />} />
+                    <Route path=':emailId' element={<Message array={letters} />} />
                 </Routes>
             </div>
         </div>
